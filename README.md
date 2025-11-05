@@ -123,7 +123,7 @@ bash scripts/test/lora_med_sapiens.sh <DATASET>
 ```
 - Example:
 ```bash
-bash scripts/test/lora_med_sapiens.sh chest
+bash scripts/test/lora_med_sapiens.sh head
 ```
 
 ### Evaluation
