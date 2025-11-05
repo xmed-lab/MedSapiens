@@ -20,7 +20,7 @@ declare -A CHECKPOINTS_LORA_SAPIENS
 CHECKPOINTS_LORA_SAPIENS["head"]="../../checkpoints/head/best_EPE_epoch_190.pth"
 CHECKPOINTS_LORA_SAPIENS["hand"]="../../checkpoints/hand/best_EPE_epoch_207.pth"
 CHECKPOINTS_LORA_SAPIENS["chest"]="../../checkpoints/chest/best_EPE_epoch_10.pth"
-CHECKPOINTS_LORA_SAPIENS["legs"]="../../checkpoints/legs//best_EPE_epoch_208.pth"
+CHECKPOINTS_LORA_SAPIENS["leg"]="../../checkpoints/legs//best_EPE_epoch_208.pth"
 
 # Select the correct checkpoint mapping
 if [ "$MODEL_TYPE" = "sapiens" ]; then
