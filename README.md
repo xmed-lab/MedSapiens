@@ -53,14 +53,18 @@ bash pip_install_editable.sh
 ```
 
 ### Data and Model Weights
-#### Download Data
-Download the datasets from [here](https://drive.google.com/file/d/1G_3Gir_MJ2Hbm4A2Oqwcy579Mgo2hpYQ/view?usp=sharing
-) and extract them to the `data/` directory:
+#### 1. Download Data
+
+Download the dataset package from the link below and extract it to the `data/` directory:
+
+- **Dataset download:** [Google Drive link](https://drive.google.com/file/d/1G_3Gir_MJ2Hbm4A2Oqwcy579Mgo2hpYQ/view?usp=sharing)
 
 ```
 gdown --id 1G_3Gir_MJ2Hbm4A2Oqwcy579Mgo2hpYQ -O med_sapien.zip
 unzip med_sapien.zip -d data/
 ```
+
+The resulting structure should look like:
 
 ```
 data/
@@ -68,14 +72,21 @@ data/
     ├─ Images/
     └─ [dataset-specific JSON annotation files]
 ```
-#### Download Model Weights
-- Download [Med-Sapien Weights here](https://drive.google.com/file/d/1Nxes7MczB3dNvA2JMtGXcSEUEk8gQg4F/view?usp=sharing).
-```bash
-gdown --id 1Nxes7MczB3dNvA2JMtGXcSEUEk8gQg4F -O checkpoints.zip
+#### 2. Download Model Weights
+To set up the model weights, first download the original **Sapiens** checkpoint, followed by the **Med-Sapien** weights.
 
+- The original Sapiens 0.3B checkpoint is downloaded automatically via`wget`.
+- Med-Sapien weights can be retrieved through the Google Drive link.
+
+```bash
+mkdir -p src/pretrain/checkpoints/sapiens_0.3b
+wget https://huggingface.co/facebook/sapiens-pretrain-0.3b/resolve/main/sapiens_0.3b_epoch_1600_clean.pth \
+    -O src/pretrain/checkpoints/sapiens_0.3b/sapiens_0.3b_epoch_1600_clean.pth
+
+gdown --id 1Nxes7MczB3dNvA2JMtGXcSEUEk8gQg4F -O checkpoints.zip
 unzip checkpoints.zip
 ```
-`
+
 The downloaded weights will have the following directory structure:
 ```
 checkpoints/
