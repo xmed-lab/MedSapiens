@@ -262,10 +262,10 @@ test_dataloader = dict(
 # evaluators
 val_evaluator = dict(
     type='EPE',
-    # ) #ann_file='../data/med_sapien'
+    # ) #ann_file='../../data/med_sapien'
 )
 
 test_evaluator = dict(
     type='EPE',
-    # ) #ann_file='../data/med_sapien'
+    # ) #ann_file='../../data/med_sapien'
 )
