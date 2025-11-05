@@ -25,7 +25,7 @@ CHECKPOINTS_LORA_SAPIENS["legs"]="../../checkpoints/legs//best_EPE_epoch_208.pth
 # Select the correct checkpoint mapping
 if [ "$MODEL_TYPE" = "sapiens" ]; then
     CHECKPOINT=${CHECKPOINTS_SAPIENS[$DATASET]}
-elif [ "$MODEL_TYPE" = "lora_sapiens" ]; then
+elif [ "$MODEL_TYPE" = "lora_med_sapiens" ]; then
     CHECKPOINT=${CHECKPOINTS_LORA_SAPIENS[$DATASET]}
 else
     echo "Invalid model type: $MODEL_TYPE"
