@@ -17,7 +17,7 @@ declare -A CHECKPOINTS_SAPIENS
 
 
 declare -A CHECKPOINTS_LORA_SAPIENS
-CHECKPOINTS_LORA_SAPIENS["head"]="/nfs/usrhome/mkfmelbatel/eez194/sapiens/pose/Outputs_EPE_lora_lora_med_sapiens/train/head/lora_sapiens_0.3b-210e_head-1024x768/node/12-11-2024_03:55:41/epoch_200.pth"
+CHECKPOINTS_LORA_SAPIENS["head"]="../../checkpoints/head/best_EPE_epoch_200.pth"
 CHECKPOINTS_LORA_SAPIENS["hand"]="../../checkpoints/hand/best_EPE_epoch_207.pth"
 CHECKPOINTS_LORA_SAPIENS["chest"]="../../checkpoints/chest/best_EPE_epoch_10.pth"
 CHECKPOINTS_LORA_SAPIENS["leg"]="../../checkpoints/legs//best_EPE_epoch_208.pth"
