@@ -1,0 +1,5 @@
+# Exclude everything
+med_sapien/Images
+
+# Allow only this .gitignore file
+!.gitignore
