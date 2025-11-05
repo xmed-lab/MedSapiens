@@ -58,7 +58,7 @@ def evaluate(annotations_path, predictions_path,output_dir, keypoint_order=None,
 
         elif 'leg' in annotations_path:
             radii = [2.0, 4.0, 10.0]
-            meta_json = os.path.join(base_path, 'data/med_sapien/leg_meta_json', str(image_id) + '_meta.json')
+            meta_json = os.path.join('data/med_sapien/leg_meta_json', str(image_id) + '_meta.json')
             with open(meta_json, 'r') as file:
                 data = json.load(file)
                 # Extract the spacing if present
