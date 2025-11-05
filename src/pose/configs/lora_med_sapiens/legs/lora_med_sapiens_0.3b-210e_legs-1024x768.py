@@ -177,7 +177,7 @@ dataset_coco = dict(
     type='CocoDataset',
     data_root='../../data/med_sapien',
     data_mode='topdown',
-    ann_file='legs_coco_train_annotations.json',
+    ann_file='leg_coco_train_annotations.json',
     data_prefix=dict(img='Images/'),
 )
 
@@ -185,7 +185,7 @@ dataset_coco_val = dict(
     type='CocoDataset',
     data_root='../../data/med_sapien',
     data_mode='topdown',
-    ann_file='legs_coco_val_annotations.json',
+    ann_file='leg_coco_val_annotations.json',
     data_prefix=dict(img='Images/'),
 )
 
@@ -193,7 +193,7 @@ dataset_coco_test = dict(
     type='CocoDataset',
     data_root='../../data/med_sapien',
     data_mode='topdown',
-    ann_file='legs_coco_test_annotations.json',
+    ann_file='leg_coco_test_annotations.json',
     data_prefix=dict(img='Images/'),
 )
 

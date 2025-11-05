@@ -123,7 +123,7 @@ bash scripts/test/lora_med_sapiens.sh <DATASET>
 ```
 - Example:
 ```bash
-bash scripts/test/lora_med_sapiens.sh chest 
+bash scripts/test/lora_med_sapiens.sh legs
 ```
 
 ### Evaluation
@@ -141,10 +141,9 @@ python evaluate.py \
 - Example:
 ```bash
 python evaluation/evaluate.py \
-    --annotations data/med_sapien/chest_coco_val_annotations.json \
-    --predictions src/pose/Outputs/test_lora/chest/predictions.pkl \
-    --output-dir src/pose/Outputs/evaluation/chest \
-    --save-vis
+    --annotations data/med_sapien/hand_coco_test_annotations.json \
+    --predictions src/pose/Outputs/test_lora/hand/lora_med_sapiens_0.3b-210e_hand-1024x768/test_dump.pkl \
+    --output-dir src/pose/Outputs/evaluation/hand 
 ```
 ### Configurations
 - Adjust batch sizes, devices, and other parameters directly in the `.sh` scripts as needed.
