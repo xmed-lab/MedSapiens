@@ -2,7 +2,8 @@ cd src/pose
 
 
 ###--------------------------------------------------------------
-DEVICES=0,1,2,3,
+#DEVICES=0,1,2,3,
+DEVICES=0,1,
 
 RUN_FILE='./tools/dist_train.sh'
 PORT=$(( ((RANDOM<<15)|RANDOM) % 63001 + 2000 ))
