@@ -56,7 +56,7 @@ def evaluate(annotations_path, predictions_path,output_dir, keypoint_order=None,
             landmark_statistic.add_landmarks(image_id=image_id, predicted=pred_keypoints, groundtruth=gt_keypoints,
                                              spacing=[512 / gt_image['width'], 512 / gt_image['height']])
 
-        elif 'legs' in annotations_path:
+        elif 'leg' in annotations_path:
             radii = [2.0, 4.0, 10.0]
             meta_json = os.path.join(base_path, 'data/leg/meta_json', str(image_id) + '_meta.json')
             with open(meta_json, 'r') as file:
