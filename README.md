@@ -19,7 +19,7 @@ This paper does not introduce a novel architecture; instead, it revisits a funda
 
 ## Features
 - **Universal Framework**: Adaptable for multiple medical imaging datasets.
-- **LoRA Fine-Tuning**: Enhances SAPIENS for medical-specific datasets.
+- **LoRA Fine-Tuning**: Adapts SAPIENS for medical-specific datasets.
 
 | **Method**                                           | **Head Dataset**  | **Hand Dataset**  | **Chest Dataset** | **Leg Dataset**   |
 |------------------------------------------------------|-------------------|-------------------|-------------------|-------------------|
