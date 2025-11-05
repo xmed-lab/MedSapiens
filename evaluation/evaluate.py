@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 from tqdm import tqdm
-from evaluation.utils.landmark_statistics import LandmarkStatistics
+from utils.landmark_statistics import LandmarkStatistics
 
 base_path = "../"
 

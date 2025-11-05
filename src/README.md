@@ -99,6 +99,7 @@ Sapiens offers a comprehensive suite for human-centric vision tasks (e.g., 2D po
    └── normal/
    ```
 
+
 ## 🌟 Human-Centric Vision Tasks
 We finetune sapiens for multiple human-centric vision tasks. Please checkout the list below.
 
