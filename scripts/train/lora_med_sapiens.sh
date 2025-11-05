@@ -22,7 +22,7 @@ LOAD_FROM=''
 mode=${2:-'multi-gpu'}  # Default mode is multi-gpu if not specified
 
 ###--------------------------------------------------------------
-CONFIG_FILE=configs/lora_med_sapiens_lora/${DATASET}/${MODEL}.py
+CONFIG_FILE=configs/lora_med_sapiens/${DATASET}/${MODEL}.py
 OUTPUT_DIR="Outputs/train_lora/${DATASET}/${MODEL}/node"
 OUTPUT_DIR="$(echo "${OUTPUT_DIR}/$(date +"%m-%d-%Y_%H:%M:%S")")"
 

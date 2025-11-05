@@ -1,5 +1,21 @@
 # MedSapiens: Taking a Pose to Rethink Medical Imaging Landmark Detection
-Landmark detection in medical imaging plays a pivotal role in diagnostics and surgical planning. Traditional methods often rely on domain-specific models, but the advent of large-scale pretrained models has reshaped the field. MedSapien introduces a groundbreaking framework that leverages LoRA fine-tuning of the SAPIENS model—originally designed for general pose estimation—to achieve state-of-the-art performance in anatomical landmark detection. By bridging the gap between general vision models and medical imaging applications, MedSapien sets a new benchmark for universal landmark detection frameworks.
+<div align="center">
+
+[![arXiv](https://img.shields.io/badge/arXiv-2503.11167-brown?logo=arxiv&style=flat-square)]()
+
+
+</div>
+
+###### [Marawan Elbatel](https://marwankefah.github.io/), Anbang Wang, Keyuan Liu, Kaouther Mouheb, Enrique Almar-Munoz, Lizhuo Lin, Yanqi Yang, [Karim Lekadir](https://www.icrea.cat/community/icreas/26227/karim-lekadir/), [Xiaomeng Li](https://xmengli.github.io/)
+
+
+This paper does not introduce a novel architecture; instead, it revisits a fundamental yet overlooked baseline: adapting human-centric foundation models for anatomical landmark detection in medical imaging. While landmark detection has traditionally relied on domain-specific models, the emergence of large-scale pre-trained vision models presents new opportunities. In this study, we investigate the adaptation of **Sapiens**, a human-centric foundation model, for medical imaging through multi-dataset pretraining, establishing a new state-of-the-art across multiple datasets. Our proposed model, **MedSapiens**, demonstrates that human-centric foundation models—naturally optimized for spatial pose localization—provide strong priors for anatomical landmark detection, yet this potential has remained largely untapped. 
+
+
+
+
+![MedSapien_datasets.png](assets/MedSapien_datasets.png)
+
 
 ## Features
 - **Universal Framework**: Adaptable for multiple medical imaging datasets.
@@ -57,8 +73,6 @@ bash pip_install_editable.sh
 
 Download the dataset package from the link below and extract it to the `data/` directory:
 
-- **Dataset download:** [Google Drive link](https://drive.google.com/file/d/1G_3Gir_MJ2Hbm4A2Oqwcy579Mgo2hpYQ/view?usp=sharing)
-
 ```
 gdown --id 1G_3Gir_MJ2Hbm4A2Oqwcy579Mgo2hpYQ -O med_sapien.zip
 unzip med_sapien.zip -d data/
@@ -76,7 +90,7 @@ data/
 To set up the model weights, first download the original **Sapiens** checkpoint, followed by the **Med-Sapien** weights.
 
 - The original Sapiens 0.3B checkpoint is downloaded automatically via`wget`.
-- Med-Sapien weights can be retrieved through the Google Drive link.
+- Med-Sapien weights can be retrieved through the gdown (Google Drive link).
 
 ```bash
 mkdir -p src/pretrain/checkpoints/sapiens_0.3b
@@ -93,7 +107,7 @@ checkpoints/
 └── med_sapien/
     ├──best_EPE_epoch_199.pth
     ├── head/
-    │   └── best_EPE_epoch_190.pth
+    │   └── best_EPE_epoch_200.pth
     ├── hand/
     │   └── best_EPE_epoch_207.pth
     ├── chest/
@@ -106,24 +120,24 @@ checkpoints/
 ## 🎯 Customized MedSapien
 
 ### LoRA Fine-Tuning 
-Use the `lora_med_sapiens.sh` script to fine-tune the model. Specify the dataset (`chest`, `hand`, `head`, or `legs`).
+Use the `lora_med_sapiens.sh` script to fine-tune the model. Specify the dataset (`chest`, `hand`, `head`, or `leg`).
 
 ```bash
 bash scripts/train/lora_med_sapiens.sh <DATASET>
 ```
 - Example:
 ```bash
-bash scripts/train/lora/lora_med_sapiens.sh chest
+bash scripts/train/lora_med_sapiens.sh chest
 ```
 
 ### Testing
-Use the second `lora_med_sapiens.sh` script to evaluate the model:
+Use the below script to evaluate the model:
 ```bash
 bash scripts/test/lora_med_sapiens.sh <DATASET>
 ```
 - Example:
 ```bash
-bash scripts/test/lora_med_sapiens.sh head
+bash scripts/test/lora_med_sapiens.sh chest
 ```
 
 ### Evaluation
@@ -141,10 +155,9 @@ python evaluate.py \
 - Example:
 ```bash
 python evaluation/evaluate.py \
-    --annotations data/med_sapien/head_coco_test_annotations.json \
-    --predictions src/pose/Outputs/test_lora/head/lora_med_sapiens_0.3b-210e_head-1024x768/test_dump.pkl \
-    --output-dir src/pose/Outputs/evaluation/head 
-
+    --annotations data/med_sapien/chest_coco_test_annotations.json \
+    --predictions src/pose/Outputs/test_lora/chest/lora_med_sapiens_0.3b-210e_chest-1024x768/test_dump.pkl \
+    --output-dir src/pose/Outputs/evaluation/chest 
 ```
 
 ### Configurations
@@ -161,7 +174,7 @@ If you find this work useful, please cite the forthcoming paper:
   title={MedSapien: Taking a Pose to Rethink Medical Imaging Landmark Detection},
   author={},
   arxiv={soon},
-  year={2024}
+  year={2025}
 }
 ```
 
