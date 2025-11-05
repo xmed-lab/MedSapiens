@@ -11,8 +11,7 @@ PORT=$(( ((RANDOM<<15)|RANDOM) % 63001 + 2000 ))
 
 # Accept dataset and model type as arguments
 DATASET=${1:-"chest"}
-MODEL_TYPE=${2:-"lora_sapiens"} # Default to sapiens if not provided
-
+MODEL_TYPE=${2:-"lora__med_sapiens"} # Default to sapiens if not provided
 ## Map dataset to the correct checkpoint path
 declare -A CHECKPOINTS_SAPIENS
 
