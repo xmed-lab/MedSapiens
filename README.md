@@ -6,7 +6,7 @@
 
 </div>
 
-###### [Marawan Elbatel](https://marwankefah.github.io/), Anbang Wang, Keyuan Liu, Kaouther Mouheb, Enrique Almar-Munoz, Lizhuo Lin, Yanqi Yang, [Karim Lekadir](https://www.icrea.cat/community/icreas/26227/karim-lekadir/), [Xiaomeng Li](https://xmengli.github.io/)
+###### [Marawan Elbatel](https://marwankefah.github.io/), [Anbang Wang](https://aawangas.github.io), Keyuan Liu, Kaouther Mouheb, Enrique Almar-Munoz, Lizhuo Lin, Yanqi Yang, [Karim Lekadir](https://www.icrea.cat/community/icreas/26227/karim-lekadir/), [Xiaomeng Li](https://xmengli.github.io/)
 
 
 This paper does not introduce a novel architecture; instead, it revisits a fundamental yet overlooked baseline: adapting human-centric foundation models for anatomical landmark detection in medical imaging. While landmark detection has traditionally relied on domain-specific models, the emergence of large-scale pre-trained vision models presents new opportunities. In this study, we investigate the adaptation of **Sapiens**, a human-centric foundation model, for medical imaging through multi-dataset pretraining, establishing a new state-of-the-art across multiple datasets. Our proposed model, **MedSapiens**, demonstrates that human-centric foundation models—naturally optimized for spatial pose localization—provide strong priors for anatomical landmark detection, yet this potential has remained largely untapped. 
@@ -23,9 +23,9 @@ This paper does not introduce a novel architecture; instead, it revisits a funda
 
 | **Method**                                           | **Head Dataset**  | **Hand Dataset**  | **Chest Dataset** | **Leg Dataset**   |
 |------------------------------------------------------|-------------------|-------------------|-------------------|-------------------|
-| [NFDP](https://doi.org/10.xxxx/NFDP)                 | 1.245 ± 0.276     | 0.673 ± 0.152     | 5.13 ± 1.44       | 2.685 ± 0.617     |
-| [UniverDetect](https://doi.org/10.xxxx/UniverDetect) | 1.55 ± 1.74       | 0.71 ± 1.78       | 4.06 ± 3.73       | N/A               |
-| [Sapiens]() + LoRA      <br/>                        | 1.246 ± 0.270     | 0.705 ± 0.116     | 3.846 ± 1.27      | 2.647 ± 0.572     |
+| [NFDP](https://github.com/jacksonhzx95/NFDP)                 | 1.245 ± 0.276     | 0.673 ± 0.152     | 5.13 ± 1.44       | 2.685 ± 0.617     |
+| [UniverDetect](https://doi.org/10.1016/j.neucom.2024.128157) | 1.55 ± 1.74       | 0.71 ± 1.78       | 4.06 ± 3.73       | N/A               |
+| [Sapiens](https://github.com/facebookresearch/sapiens) + LoRA      <br/>                        | 1.246 ± 0.270     | 0.705 ± 0.116     | 3.846 ± 1.27      | 2.647 ± 0.572     |
 | **MedSapiens**                                       | 1.275 ± 0.285     | 0.664 ± 0.110     | **3.715 ± 1.31**  | 2.691 ± 0.555     |
 | **+ LoRA** 🚀                                        | **1.244 ± 0.276** | **0.638 ± 0.106** | 3.734 ± 1.24      | **2.509 ± 0.556** |
 
@@ -165,7 +165,7 @@ python evaluation/evaluate.py \
 - Update paths for dataset annotations and checkpoints in the `configs/` directory.
 
 ## 🤝 Acknowledgements & Contributions
-This project builds on the exceptional work by [SAPIENS](https://github.com/open-mmlab). Contributions and collaborations are welcome! For questions or issues, please open a GitHub issue.
+This project builds on the exceptional work by [SAPIENS](https://github.com/facebookresearch/sapiens). Contributions and collaborations are welcome! For questions or issues, please open a GitHub issue.
 
 ## 📚 Citation
 If you find this work useful, please cite the forthcoming paper:
