@@ -39,7 +39,7 @@ git clone https://github.com/xmed-lab/MedSapiens
 ```
 
 ### Installation 
-MedSapiens follow strictly [**SAPIENS installation pipeline**]().
+MedSapiens follow strictly [**SAPIENS installation pipeline**](https://github.com/facebookresearch/sapiens).
 
 #### 1. Set up the Environment
 Use the provided installation script to create and configure the `sapiens` environment:
