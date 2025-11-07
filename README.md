@@ -1,7 +1,7 @@
 # MedSapiens: Taking a Pose to Rethink Medical Imaging Landmark Detection
 <div align="center">
 
-[![arXiv](https://img.shields.io/badge/arXiv-2503.11167-brown?logo=arxiv&style=flat-square)]()
+[![arXiv](https://img.shields.io/badge/arXiv-2511.04255-brown?logo=arxiv&style=flat-square)](https://arxiv.org/abs/2511.04255)
 
 
 </div>
@@ -170,13 +170,15 @@ This project builds on the exceptional work by [SAPIENS](https://github.com/face
 ## 📚 Citation
 If you find this work useful, please cite the forthcoming paper:
 ```
-@article{medsapien2024,
-  title={MedSapien: Taking a Pose to Rethink Medical Imaging Landmark Detection},
-  author={},
-  arxiv={soon},
-  year={2025}
+@misc{elbatel2025medsapienstakingposerethink,
+      title={MedSapiens: Taking a Pose to Rethink Medical Imaging Landmark Detection}, 
+      author={Marawan Elbatel and Anbang Wang and Keyuan Liu and Kaouther Mouheb and Enrique Almar-Munoz and Lizhuo Lin and Yanqi Yang and Karim Lekadir and Xiaomeng Li},
+      year={2025},
+      eprint={2511.04255},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.04255}, 
 }
-```
 
 ## 📜 License
 This project is licensed under the [SAPIENS License](LICENSE). Portions derived from open-source projects adhere to [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0).
