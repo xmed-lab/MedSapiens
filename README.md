@@ -65,7 +65,8 @@ pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2
 #### 3. Install Custom Modules
 Install the required modules in editable mode:
 ```bash
-bash pip_install_editable.sh
+cd src
+bash conda.sh
 ```
 
 ### Data and Model Weights
