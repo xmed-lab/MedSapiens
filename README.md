@@ -14,7 +14,7 @@ This paper does not introduce a novel architecture; instead, it revisits a funda
 
 
 
-![MedSapien_datasets.png](assets/MedSapien_datasets.png)
+![MedSapien_datasets.png](assets/MedSapiens.png)
 
 
 ## Features
