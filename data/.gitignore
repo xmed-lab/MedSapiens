@@ -1,5 +1,6 @@
 # Exclude everything
 med_sapien/Images
+echonetlvh
 
 # Allow only this .gitignore file
 !.gitignore

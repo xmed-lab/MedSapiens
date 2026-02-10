@@ -51,15 +51,16 @@ conda activate sapiens
 #### 2. Install Dependencies
 Install PyTorch and CUDA (12.1 or 11.8):
 ```bash
-conda install pytorch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu121
+
 ```
 Install additional Python libraries:
 ```bash
-pip install chumpy scipy munkres tqdm cython numpy==1.26.4 pandas fsspec yapf==0.40.1 matplotlib packaging omegaconf ipdb ftfy regex
+pip install --no-build-isolation -r src/pose/requirements/runtime.txt
 ```
 Install MMCV (CUDA: 12.1 or 11.8):
 ```bash
-pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.4/index.html
+pip install numpy==1.26.4 mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.4/index.html
 ```
 
 #### 3. Install Custom Modules
@@ -160,6 +161,43 @@ python evaluation/evaluate.py \
     --predictions src/pose/Outputs/test_lora/chest/lora_med_sapiens_0.3b-210e_chest-1024x768/test_dump.pkl \
     --output-dir src/pose/Outputs/evaluation/chest 
 ```
+
+
+### Echocardiography Landmark Detection
+<p align="center">
+  <img src="assets/echonet_lvh.png" width="300" />
+</p>
+
+#### 1. Download Data
+
+You can view the dataset details at [EchoNet-LVH](https://echonet.github.io/lvh/). Run the commands below to download the landmark JSONs and extract them to the data/ directory:
+```
+# Download the landmark JSONs
+gdown --id 1HlIlvTolIDIH1KvxjraIEfFCa2P64Jc4 -O echonetlvh.zip
+unzip echonetlvh.zip -d data/
+```
+
+The resulting structure should look like:
+
+```
+data/
+└─ echonetlvh/
+    ├─ Images/
+    └─ [dataset-specific JSON annotation files]
+```
+
+#### 2. LoRA Fine-Tuning 
+Use the [lora_med_sapiens.sh](scripts/train/lora_med_sapiens.sh) to fine-tune the model.
+
+```bash
+bash scripts/train/lora_med_sapiens.sh echonet_lvh
+```
+
+Use the below script to evaluate the model:
+```bash
+bash scripts/test/lora_med_sapiens.sh echonet_lvh
+```
+
 
 ### Configurations
 - Adjust batch sizes, devices, and other parameters directly in the `.sh` scripts as needed.
